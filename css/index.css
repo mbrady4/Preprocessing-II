@@ -164,9 +164,19 @@ img {
   height: auto;
 }
 .container {
+  margin-right: auto;
+  /* 1 */
+  margin-left: auto;
+  /* 1 */
   max-width: 800px;
-  width: 100%;
-  margin: 0 auto;
+  padding-right: 10px;
+  padding-left: 10px;
+}
+@media (max-width:500px) {
+  .container {
+    padding-left: 5%;
+    padding-right: 5%;
+  }
 }
 header {
   border-bottom: 2px dashed #C0C0C0;
@@ -189,6 +199,15 @@ header .navigation nav a {
   font-size: 1.8rem;
   text-decoration: none;
   color: #212529;
+}
+@media (max-width:500px) {
+  header .navigation {
+    flex-direction: column;
+    padding: 2rem 0 0 0;
+  }
+  header .navigation nav a {
+    padding: 1rem 0 1rem 6rem;
+  }
 }
 .footer {
   width: 100%;
@@ -218,12 +237,29 @@ header .navigation nav a {
   width: 48%;
   padding-right: 1%;
 }
+@media (max-width:500px) {
+  .home .content-section .text-content {
+    width: 100%;
+    padding-right: 0;
+  }
+}
 .home .content-section .img-content {
   width: 48%;
   padding-left: 1%;
 }
+@media (max-width:500px) {
+  .home .content-section .img-content {
+    width: 100%;
+    padding-left: 0;
+  }
+}
 .home .content-section .img-content img {
   border-radius: 10px;
+}
+@media (max-width:500px) {
+  .home .content-section .img-content img {
+    width: 100%;
+  }
 }
 .home .inverse-content {
   padding-bottom: 30px;
@@ -233,9 +269,25 @@ header .navigation nav a {
   padding-left: 1%;
   padding-right: 0;
 }
+@media (max-width:500px) {
+  .home .inverse-content .text-content {
+    padding-left: 0;
+  }
+}
 .home .inverse-content .img-content {
   padding-right: 1%;
   padding-left: 0;
+}
+@media (max-width:500px) {
+  .home .inverse-content .img-content {
+    padding-right: 0;
+  }
+}
+@media (max-width:500px) {
+  .home .inverse-content {
+    display: flex;
+    flex-direction: column-reverse;
+  }
 }
 .home .content-destination {
   width: 75%;
@@ -243,6 +295,11 @@ header .navigation nav a {
 }
 .home .content-destination img {
   border-radius: 10px;
+}
+@media (max-width:500px) {
+  .home .content-destination {
+    width: 100%;
+  }
 }
 .home .content-pick {
   padding-top: 30px;
@@ -262,4 +319,17 @@ header .navigation nav a {
   color: #FFFFFF;
   border-radius: 10px;
   max-width: 80%;
+}
+@media (max-width:500px) {
+  .home .content-pick {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .home .content-pick .destination {
+    width: 70%;
+  }
+  .home .content-pick .destination .btn {
+    max-width: 100%;
+    width: 100%;
+  }
 }
